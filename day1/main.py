@@ -28,6 +28,9 @@ def maxCalories():
     return getListOfElfs()[0]
 
 
+'''
+Gathering the top 3 most acquired calories
+'''
 def getTop3():
     elfs = getListOfElfs()
     sum = 0
