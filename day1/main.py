@@ -1,4 +1,10 @@
 
+'''
+Returning a list of tuples.
+[(x, y)...]
+x -> elf number
+y ->  total calories
+'''
 def getListOfElfs():
     with open('adventofcode.com_2022_day_1_input.txt', 'r') as file:
         elfs = []
@@ -16,11 +22,19 @@ def getListOfElfs():
             
     return elfs
 
-def maxCalories(ListofElfs):
-    pass
+'''
+Returning a tuple containing the elf number and it's total calories
+'''
+def maxCalories():
+    elfs = getListOfElfs()
+    maxCal = elfs[0]
+    for i in elfs:
+        if i[1] > maxCal[1]:
+            maxCal = i
+    return maxCal
     
 
 
 if __name__ == "__main__":
-    # print("Elf number {} is carrying a total of {} calories.".format(maxCalories()))
-    print(getListOfElfs())
+    elfNum, totalCal = maxCalories()
+    print("Elf number {} is the maximum carrier of a total of {} calories.".format(elfNum, totalCal))
