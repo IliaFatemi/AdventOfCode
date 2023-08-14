@@ -18,23 +18,20 @@ def getListOfElfs():
             
             if i != "\n":
                 totalCal += int(i.strip('\n'))
-             
-            
-    return elfs
+    return sorted(elfs, key=lambda x: x[1], reverse=True)
+
 
 '''
 Returning a tuple containing the elf number and it's total calories
 '''
 def maxCalories():
-    elfs = getListOfElfs()
-    maxCal = elfs[0]
-    for i in elfs:
-        if i[1] > maxCal[1]:
-            maxCal = i
-    return maxCal
+    return getListOfElfs()[0]
+
+
     
 
 
 if __name__ == "__main__":
     elfNum, totalCal = maxCalories()
     print("Elf number {} is the maximum carrier of a total of {} calories.".format(elfNum, totalCal))
+    # print(getListOfElfs())
