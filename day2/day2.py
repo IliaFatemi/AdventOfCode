@@ -11,6 +11,10 @@ X --> Rock
 Y --> Paper
 Z --> Scissor
 
+X --> loose
+Y --> draw
+Z --> win
+
 Round Verdict:
 Win --> 6
 Draw --> 3
@@ -42,14 +46,40 @@ def userScoreRule(user):
     else:
         return 3
     
+def setToLoose(opponent):
+    if opponent == 'A':
+        return 'Z'
+    elif opponent == 'B':
+        return 'X'
+    elif opponent == 'C':
+        return 'Y'
+
+def setToWin(opponent, user):
+    pass
+
+def setToDraw(opponent, user):
+    pass
+    
+    
+# Part 1    
 def getTotalScore():
     game_rounds = getPuzzleInput()
     total_score = 0
     
     for opponent, user in game_rounds:
         total_score += (userScoreRule(user) + RoundVerdict(opponent, user))
-        
     return total_score
+
+# Part 2
+def cheatRounds(opponent, user):
+    game_rounds = getPuzzleInput()
+    totalScore = 0
+    
+    for opponent, user in game_rounds:
+        if user == 'X':
+            pass
+            
+
 
 if __name__ == "__main__":
     print("Total score: {}".format(getTotalScore()))
