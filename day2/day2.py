@@ -41,6 +41,15 @@ def userScoreRule(user):
         return 2
     else:
         return 3
+    
+def getTotalScore():
+    game_rounds = getPuzzleInput()
+    total_score = 0
+    
+    for opponent, user in game_rounds:
+        total_score += (userScoreRule(user) + RoundVerdict(opponent, user))
+        
+    return total_score
 
-# if __name__ == "__main__":
-#     print("Total score: {}".format(compareHands()))
+if __name__ == "__main__":
+    print("Total score: {}".format(getTotalScore()))
