@@ -31,7 +31,7 @@ def maxCalories():
 '''
 Gathering the top 3 most acquired calories
 '''
-def getTop3():
+def sumTop3():
     elfs = getListOfElfs()
     sum = 0
     for i in range(0, 3):
@@ -42,4 +42,4 @@ def getTop3():
 if __name__ == "__main__":
     elfNum, totalCal = maxCalories()
     print("Elf number {} is the maximum carrier of a total of {} calories.".format(elfNum, totalCal))
-    print("The top 3 total total calory is {}".format(getTop3()))
+    print("The top 3 total total calory is {}".format(sumTop3()))
