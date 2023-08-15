@@ -54,8 +54,13 @@ def setToLoose(opponent):
     elif opponent == 'C':
         return 'Y'
 
-def setToWin(opponent, user):
-    pass
+def setToWin(opponent):
+    if opponent == 'A':
+        return 'Y'
+    elif opponent == 'B':
+        return 'Z'
+    elif opponent == 'C':
+        return 'X'
 
 def setToDraw(opponent, user):
     pass
