@@ -62,8 +62,13 @@ def setToWin(opponent):
     elif opponent == 'C':
         return 'X'
 
-def setToDraw(opponent, user):
-    pass
+def setToDraw(opponent):
+    if opponent == 'A':
+        return 'X'
+    elif opponent == 'B':
+        return 'Y'
+    elif opponent == 'C':
+        return 'Z'
     
     
 # Part 1    
@@ -84,7 +89,5 @@ def cheatRounds(opponent, user):
         if user == 'X':
             pass
             
-
-
 if __name__ == "__main__":
     print("Total score: {}".format(getTotalScore()))
