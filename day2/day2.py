@@ -34,9 +34,13 @@ def RoundVerdict(opponent, user):
     else:
         return 0
     
-
-
-    
+def userScoreRule(user):
+    if user == 'X':
+        return 1
+    elif user == 'Y':
+        return 2
+    else:
+        return 3
 
 # if __name__ == "__main__":
-#     # getPuzzleInput()
+#     print("Total score: {}".format(compareHands()))
