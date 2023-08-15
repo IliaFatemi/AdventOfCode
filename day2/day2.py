@@ -81,13 +81,19 @@ def getTotalScore():
     return total_score
 
 # Part 2
-def cheatRounds(opponent, user):
+def cheatRounds():
     game_rounds = getPuzzleInput()
     totalScore = 0
     
     for opponent, user in game_rounds:
         if user == 'X':
-            pass
+            totalScore += (userScoreRule(setToLoose(opponent)) + RoundVerdict(opponent, setToLoose(opponent)))
+        elif user == 'Y':
+            totalScore += (userScoreRule(setToDraw(opponent)) + RoundVerdict(opponent, setToDraw(opponent)))
+        elif user == 'Z':
+            totalScore += (userScoreRule(setToWin(opponent)) + RoundVerdict(opponent, setToWin(opponent)))
+    return totalScore
             
 if __name__ == "__main__":
-    print("Total score: {}".format(getTotalScore()))
+    print("part 1: Total score: {}".format(getTotalScore()))
+    print("part 2: Total score: {}".format(cheatRounds()))
