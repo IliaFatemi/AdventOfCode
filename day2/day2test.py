@@ -1,4 +1,4 @@
-from day2 import RoundVerdict, userScoreRule, setToLoose, setToWin
+from day2 import RoundVerdict, userScoreRule, setToLoose, setToWin, setToDraw
 
 assert RoundVerdict('A', 'Y') == 6
 assert RoundVerdict('B', 'X') == 0
@@ -15,3 +15,7 @@ assert setToLoose('C') == 'Y'
 assert setToWin('A') == 'Y'
 assert setToWin('B') == 'Z'
 assert setToWin('C') == 'X'
+
+assert setToDraw('A') == 'X'
+assert setToDraw('B') == 'Y'
+assert setToDraw('C') == 'Z'
