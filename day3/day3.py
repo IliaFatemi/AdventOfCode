@@ -16,6 +16,9 @@ def compareDepartments(sack: list):
                 duplicates.append(sack[i])
     return duplicates
 
+def compareGroups(sacks: list):
+    pass
+
 def prioritizeItems(duplicateItems: list):
     prioritizeItemsList = []
     for i in duplicateItems:
@@ -35,6 +38,9 @@ def sumPriorities():
         for prioritize in prioritized:
             sumSacks += prioritize[1]
     return sumSacks
+
+#Part 2
+
             
 if __name__ == "__main__":
     print("The sum of the priorities: {}".format(sumPriorities()))
