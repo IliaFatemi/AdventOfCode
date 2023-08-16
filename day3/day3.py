@@ -47,7 +47,13 @@ def sumPriorities():
     return sumSacks
 
 #Part 2
-
+def sumPrioritiesOfGroups():
+    ruckSacks = getRuckSacks()
+    sumSacks = 0
+    for i in range(0, len(ruckSacks), 3):
+        print(i)
+        
             
 if __name__ == "__main__":
     print("The sum of the priorities: {}".format(sumPriorities()))
+    print("The sum of the priorities per groups: {}".format(sumPrioritiesOfGroups()))
