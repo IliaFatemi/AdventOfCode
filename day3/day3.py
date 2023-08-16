@@ -24,9 +24,17 @@ def prioritizeItems(duplicateItems: list):
         elif i.isupper():
             prioritizeItemsList.append((i, ord(i)-ord("Z")+52))
     return prioritizeItemsList
-    
-    
-            
+
+#Part 1
+def sumPriorities():
+    rucksacks = getRuckSacks()
+    sumSacks = 0
+    for aSack in rucksacks:
+        duplicates = compareDepartments(aSack[1])
+        prioritized = prioritizeItems(duplicates)
+        for prioritize in prioritized:
+            sumSacks += prioritize[1]
+    return sumSacks
             
 if __name__ == "__main__":
-    pass
+    print("The sum of the priorities: {}".format(sumPriorities()))
