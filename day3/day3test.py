@@ -1,4 +1,4 @@
-from day3 import compareDepartments, prioritizeItems, compareGroups
+from day3 import compareDepartments, prioritizeItems, compare3Groups
 
 assert compareDepartments("vJrwpWtwJgWrhcsFMMfFFhFp") == ["p"]
 assert compareDepartments("jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL") == ["L"]
@@ -19,5 +19,6 @@ assert prioritizeItems(["G", "L"]) == [("G", 33), ("L", 38)]
 assert prioritizeItems(["Z"]) == [("Z", 52)]
 assert prioritizeItems(["z"]) == [("z", 26)]
 
-assert compareGroups([['vJrwpWtwJgWrhcsFMMfFFhFp'], ['jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL'], ['PmmdzqPrVvPwwTWBwg']]) == ['r']
-assert compareGroups([['wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn'], ['ttgJtRGJQctTZtZT'], ['CrZsJsPPZsGzwwsLwLmpwMDw']]) == ['Z']
+assert compare3Groups([['vJrwpWtwJgWrhcsFMMfFFhFp'], ['jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL'], ['PmmdzqPrVvPwwTWBwg']]) == {'r'}
+assert compare3Groups([['wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn'], ['ttgJtRGJQctTZtZT'], ['CrZsJsPPZsGzwwsLwLmpwMDw']]) == {'Z'}
+assert compare3Groups([['Azy'], ['xzyw'], ['abczy']]) == {'z', 'y'}
