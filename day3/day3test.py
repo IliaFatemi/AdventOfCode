@@ -11,7 +11,7 @@ assert compareDepartments("gjqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSLG") == ["G", "L"]
 
 assert prioritizeItems(["p"]) == [("p", 16)]
 assert prioritizeItems(["L"]) == [("L", 38)]
-assert prioritizeItems(["p"]) == [("p", 16)]
+assert prioritizeItems(["P"]) == [("P", 42)]
 assert prioritizeItems(["v"]) == [("v", 22)]
 assert prioritizeItems(["t"]) == [("t", 20)]
 assert prioritizeItems(["s"]) == [("s", 19)]
