@@ -5,7 +5,10 @@ def getRuckSacks():
         numRuckSacks = 0
         for i in file.readlines():
             numRuckSacks += 1
-            rucksacks.append((numRuckSacks, i))
+            if i[-1] == '\n':
+                rucksacks.append((numRuckSacks, i[:-1]))
+            else:    
+                rucksacks.append((numRuckSacks, i))
     return rucksacks
 
 def compareDepartments(sack: list):
@@ -50,9 +53,12 @@ def sumPriorities():
 def sumPrioritiesOfGroups():
     ruckSacks = getRuckSacks()
     sumSacks = 0
-    for i in range(0, len(ruckSacks), 3):
-        print(i)
-        
+    for aSack in range(0, len(ruckSacks), 3):
+        duplicates = compare3Groups([[ruckSacks[aSack][1]],[ruckSacks[aSack+1][1]],[ruckSacks[aSack+2][1]]])
+        prioritized = prioritizeItems(duplicates)
+        for prioritize in prioritized:
+            sumSacks += prioritize[1]
+    return sumSacks
             
 if __name__ == "__main__":
     print("The sum of the priorities: {}".format(sumPriorities()))
