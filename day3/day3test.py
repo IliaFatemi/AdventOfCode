@@ -1,4 +1,4 @@
-from day3 import compareDepartments, prioritizeItems
+from day3 import compareDepartments, prioritizeItems, compareGroups
 
 assert compareDepartments("vJrwpWtwJgWrhcsFMMfFFhFp") == ["p"]
 assert compareDepartments("jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL") == ["L"]
@@ -18,3 +18,6 @@ assert prioritizeItems(["s"]) == [("s", 19)]
 assert prioritizeItems(["G", "L"]) == [("G", 33), ("L", 38)]
 assert prioritizeItems(["Z"]) == [("Z", 52)]
 assert prioritizeItems(["z"]) == [("z", 26)]
+
+assert compareGroups([['vJrwpWtwJgWrhcsFMMfFFhFp'], ['jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL'], ['PmmdzqPrVvPwwTWBwg']]) == ['r']
+assert compareGroups([['wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn'], ['ttgJtRGJQctTZtZT'], ['CrZsJsPPZsGzwwsLwLmpwMDw']]) == ['Z']
