@@ -16,8 +16,15 @@ def compareDepartments(sack: list):
                 duplicates.append(sack[i])
     return duplicates
 
-def compareGroups(sacks: list):
-    pass
+def compare3Groups(sacks: list):
+    splits = []
+    for i in range(len(sacks)):
+        splits.append([])
+        for j in sacks[i][0]:
+            splits[i].append(j)
+            
+    return set(splits[0]).intersection(splits[1], splits[2])
+        
 
 def prioritizeItems(duplicateItems: list):
     prioritizeItemsList = []
