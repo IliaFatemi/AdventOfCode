@@ -8,7 +8,7 @@ def getRuckSacks():
             rucksacks.append((numRuckSacks, i))
     return rucksacks
 
-def compareDepartments(sack):
+def compareDepartments(sack: list):
     duplicates = []
     for i in range(int(len(sack)/2)):
         for j in range(int(len(sack)/2)):
@@ -16,11 +16,16 @@ def compareDepartments(sack):
                 duplicates.append(sack[i])
     return duplicates
 
-# def findDuplicates():
-#     ruckSacks = getRuckSacks()
-#     for aSack in ruckSacks:
-#         for i in aSack[1]:
-#             pass
+def prioritizeItems(duplicateItems: list):
+    prioritizeItemsList = []
+    for i in duplicateItems:
+        if i.islower():
+            prioritizeItemsList.append((i, ord(i)-ord("z")+26))
+        elif i.isupper():
+            prioritizeItemsList.append((i, ord(i)-ord("Z")+52))
+    return prioritizeItemsList
+    
+    
             
             
 if __name__ == "__main__":
