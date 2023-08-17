@@ -18,6 +18,12 @@ def isInRange(data):
     y1, y2 = map(int, ranges[1].split('-'))
     return (x1 <= y1 and x2 >= y2) or (x1 >= y1 and x2 <= y2)
 
+def isOverlapping(data):
+    ranges = data[1]
+    x1, x2 = map(int, ranges[0].split('-'))
+    y1, y2 = map(int, ranges[1].split('-'))
+    return (y1 >= x1 and y1 <= x2) or (y2 >= x1 and y2 <= x2) or (x1 >= y1 and x1 <= y2) or (x2 >= y1 and x2 <= y2)
+
 # part 1
 def numPairs():
     dataSet = getInput()
@@ -27,6 +33,16 @@ def numPairs():
             pairs += 1
     return pairs
 
+# part 2
+def numOverlap():
+    dataSet = getInput()
+    overlapped = 0
+    for data in dataSet:
+        if isOverlapping(data):
+            overlapped += 1
+    return overlapped
+
 
 if __name__ == "__main__":
     print("Number of pairs: {}".format(numPairs()))
+    print("Number of overlaps: {}".format(numOverlap()))
