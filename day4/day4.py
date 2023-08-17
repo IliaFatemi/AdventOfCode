@@ -15,10 +15,17 @@ def getInput():
 def isInRange(data):
     ranges = data[1]
     x1, x2 = ranges[0].split('-')
-    y1, y2 = ranges[1].split('-')
-    
+    y1, y2 = ranges[1].split('-') 
     return (int(y1) >= int(x1) and int(y2) <= int(x2)) or (int(x1) >= int(y1) and int(y2) <= int(x2))
+
+def numPairs():
+    dataSet = getInput()
+    pairs = 0
+    for data in dataSet:
+        if isInRange(data):
+            pairs += 1
+    return pairs
 
 
 if __name__ == "__main__":
-    print(isInRange((4, ['2-8', '3-7'])))
+    print("Number of pairs: {}".format(numPairs()))
