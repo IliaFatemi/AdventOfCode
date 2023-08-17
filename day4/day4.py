@@ -12,7 +12,13 @@ def getInput():
     return data
 
 
+def isInRange(data):
+    ranges = data[1]
+    x1, x2 = ranges[0].split('-')
+    y1, y2 = ranges[1].split('-')
+    
+    return (int(y1) >= int(x1) and int(y2) <= int(x2)) or (int(x1) >= int(y1) and int(y2) <= int(x2))
 
 
 if __name__ == "__main__":
-    print(getInput())
+    print(isInRange((4, ['2-8', '3-7'])))
