@@ -18,18 +18,19 @@ def getInputs() -> tuple[list, list]:
 def cratify(crates):
     newCrate = []
     row = 0
-    flag = False
+    numSpaces = 0
     for i in range(len(crates)):
         newCrate.append([])
     
     for crate in crates:
         for item in crate:
-            if item == '' and flag == False:
+            if item == '' and numSpaces >= 3:
                 newCrate[row].append('')
-                flag = True
+                numSpaces = 0
             elif item != '':
                 newCrate[row].append(item)
-                flag = False
+            else:
+                numSpaces += 1
         row += 1
     newCrate.pop()
     return newCrate
