@@ -11,7 +11,7 @@ def getInputs() -> tuple[list, list]:
                         crates.pop()
                 else:
                     instructions.append(i)
-        print(rotateMatrix(crates))
+        print(rotateCrate(crates))
         print()
     return crates, instructions
 
@@ -36,37 +36,22 @@ def cratify(crates):
     return newCrate
 
 
-def rotateMatrix(crates):
+def rotateCrate(crates):
     newCrate = []
-    num_containers = len(crates)-1
-    col = 0
-    numSpaces = 0
-    print(crates)
-    print()
-    print(cratify(crates))
+    cratified = cratify(crates)
+    row = 0
     
-    
-    # for i in range(num_containers):
-    #     newCrate.append([])
-    # for crate in crates:
-    #     for item in crate:
-    #         if item == '':
-    #             numSpaces += 1
-    #         if numSpaces == 3:
-    #             col += 1
-    #             numSpaces = 0
-    #         if item != '':
-    #             try:
-    #                 newCrate[col].append(item)
-    #             except IndexError:
-    #                 newCrate[col-2].append(item)
-    #             finally:
-    #                 col += 1
-    #                 numSpaces = 0
-    #     col = 0
-    #     numSpaces = 0
-    # for i in newCrate:
-    #     i.pop()
+    for i in range(len(cratified)):
+        newCrate.append([])
+        
+    for crate in cratified:
+        for item in crate:
+            if item == '':
+                row += 1
+            else:
+                newCrate[row].append(item)
+                row += 1
+        row = 0
     return newCrate
                 
     
