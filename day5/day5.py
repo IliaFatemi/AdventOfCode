@@ -83,6 +83,7 @@ def printSteps(crates):
 def solve():
     crates, instructions = getInputs()
     stack = []
+    printSteps(crates)
     
     for instruction in instructions:
         decryptInst = instruction.split(' ')
@@ -94,7 +95,31 @@ def solve():
         for i in range(quantity):
             take = crates[fromPos-1].pop()
             crates[toPos-1].append(take)
-            printSteps(crates)
+        printSteps(crates)
+            
+    for i in range(len(crates)):
+        stack.append(crates[i][len(crates[i])-1])
+    return tuple(stack)
+
+# Part 2
+def solve2():
+    crates, instructions = getInputs()
+    stack = []
+    printSteps(crates)
+    
+    for instruction in instructions:
+        decryptInst = instruction.split(' ')
+        decryptInst.remove('move')
+        decryptInst.remove('from')
+        decryptInst.remove('to')
+        quantity, fromPos, toPos = map(int, decryptInst)
+        
+        moveUp = 0
+        for i in range(quantity):
+            take = crates[fromPos-1].pop(len(crates[fromPos-1])-quantity + moveUp)
+            crates[toPos-1].append(take)
+            moveUp += 1
+        printSteps(crates)
             
     for i in range(len(crates)):
         stack.append(crates[i][len(crates[i])-1])
@@ -103,4 +128,5 @@ def solve():
     
         
 if __name__ == "__main__":
-    print("Crates {} ended up on top of each stack".format(solve()))
+    # print("Part 1: Crates {} ended up on top of each stack".format(solve()))
+    print("Part 2: Crates {} ended up on top of each stack".format(solve2()))
