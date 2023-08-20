@@ -11,9 +11,8 @@ def getInputs() -> tuple[list, list]:
                         crates.pop()
                 else:
                     instructions.append(i)
-        print(rotateCrate(crates))
-        print()
-    return crates, instructions
+        
+    return rotateCrate(crates), instructions
 
 def cratify(crates):
     newCrate = []
@@ -35,6 +34,14 @@ def cratify(crates):
     newCrate.pop()
     return newCrate
 
+def reverseCrateItems(crates):
+    newCrate = []
+    for i in range(len(crates)):
+        newCrate.append([])
+        for j in range(len(crates[i]), 0, -1):
+
+            newCrate[i].append(crates[i][j-1])
+    return newCrate
 
 def rotateCrate(crates):
     newCrate = []
@@ -52,7 +59,7 @@ def rotateCrate(crates):
                 newCrate[row].append(item)
                 row += 1
         row = 0
-    return newCrate
+    return reverseCrateItems(newCrate)
                 
     
 
