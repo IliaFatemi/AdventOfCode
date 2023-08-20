@@ -48,7 +48,15 @@ def rotateCrate(crates):
     cratified = cratify(crates)
     row = 0
     
-    for i in range(len(cratified)):
+    """
+        [
+            [" ", "D", "", ""],
+            [n, c, , ],
+            [z, m, p, l]
+        ]
+    """
+    
+    for i in range(len(cratified[0])):
         newCrate.append([])
         
     for crate in cratified:
