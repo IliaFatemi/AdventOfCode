@@ -10,7 +10,7 @@ def getInputs() -> tuple[list, list]:
                         newLine = True
                         crates.pop()
                 else:
-                    instructions.append(i)
+                    instructions.append(i.strip('\n'))
         
     return rotateCrate(crates), instructions
 
@@ -60,8 +60,35 @@ def rotateCrate(crates):
                 row += 1
         row = 0
     return reverseCrateItems(newCrate)
-                
-    
 
+def printSteps(crates):
+    containerNum = 1
+    for crate in crates:
+        print(containerNum, end=' ')
+        for item in crate:
+            print(item, end='')
+        print()
+        containerNum += 1
+    print()
+                
+# Part 1
+def solve():
+    crates, instructions = getInputs()
+    
+    for instruction in instructions:
+        decryptInst = instruction.split(' ')
+        decryptInst.remove('move')
+        decryptInst.remove('from')
+        decryptInst.remove('to')
+        quantity, fromPos, toPos = map(int, decryptInst)
+        
+        for i in range(quantity):
+            take = crates[fromPos-1].pop()
+            crates[toPos-1].append(take)
+            printSteps(crates)
+    
+    
+        
+        
 if __name__ == "__main__":
-    getInputs()
+    print(solve())
