@@ -1,4 +1,4 @@
-from day5 import cratify, rotateCrate
+from day5 import cratify, rotateCrate, reverseCrateItems
 
 assert cratify([['', '', '', '', '[D]', '', '', '', ''], []]) == [['', '[D]', '']]
 assert cratify([['[N]', '[C]', '', '', '', ''], []]) == [['[N]', '[C]', '']]
@@ -9,3 +9,5 @@ assert cratify([['[Q]','','','','','','','','','','[N]','','','','','','','','',
 
 
 assert rotateCrate([['', '', '', '', '[D]', '', '', '', ''], ['[N]', '[C]', '', '', '', ''], ['[Z]', '[M]', '[P]'], ['', '1', '', '', '2', '', '', '3', '']]) == [['[Z]', '[N]'], ['[M]', '[C]', '[D]'], ['[P]']]
+
+assert reverseCrateItems([['[Z]', '[N]'], ['[M]', '[C]', '[D]'], ['[P]']]) == [['[N]', '[Z]'], ['[D]', '[C]', '[M]'], ['[P]']]
