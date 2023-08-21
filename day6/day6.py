@@ -1,9 +1,17 @@
 def findMarker(characters):
     start = 0
-    end = 3
+    end = 4
     finding = True
     while finding:
-        pass
+        start_of_packet = characters[start:end]
+        if isDuplicate(start_of_packet):
+            start += 1
+            end += 1
+        else:
+            print(start_of_packet)
+            finding = False
+    return end
+        
 
 def isDuplicate(characters):
     for i in range(len(characters)-1):
