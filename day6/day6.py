@@ -1,4 +1,4 @@
-def findMarker(characters, distinct_char):
+def findMarker(characters, distinct_char=4):
     start = 0
     end = distinct_char
     finding = True
