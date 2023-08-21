@@ -1,6 +1,6 @@
-def findMarker(characters):
+def findMarker(characters, distinct_char):
     start = 0
-    end = 4
+    end = distinct_char
     finding = True
     while finding:
         start_of_packet = characters[start:end]
@@ -22,7 +22,7 @@ def isDuplicate(characters):
 # Part 1
 def solve():
     with open('adventofcode.com_2022_day_6_input.txt', 'r') as file:
-        print('{} characters need to be processed before the first start-of-packet marker is detected'.format(findMarker(file.read())))
+        print('{} characters need to be processed before the first start-of-packet marker is detected'.format(findMarker(file.read(), 4)))
 
 if __name__ == '__main__':
     solve()
