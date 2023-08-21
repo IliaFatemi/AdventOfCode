@@ -1,12 +1,12 @@
-from day6 import isDuplicate
+from day6 import isDuplicate, findMarker
 
 assert isDuplicate('abcd') == False
 assert isDuplicate('abca') == True
 assert isDuplicate('abdd') == True
 assert isDuplicate('accd') == True
 
-# assert numCharProcessed('mjqjpqmgbljsphdztnvjfqwrcgsmlb') == 7
-# assert numCharProcessed('bvwbjplbgvbhsrlpgdmjqwftvncz') == 5
-# assert numCharProcessed('nppdvjthqldpwncqszvftbrmjlhg') == 6
-# assert numCharProcessed('nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg') == 10
-# assert numCharProcessed('zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw') ==11
+assert findMarker('mjqjpqmgbljsphdztnvjfqwrcgsmlb') == 7
+assert findMarker('bvwbjplbgvbhsrlpgdmjqwftvncz') == 5
+assert findMarker('nppdvjthqldpwncqszvftbrmjlhg') == 6
+assert findMarker('nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg') == 10
+assert findMarker('zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw') ==11
